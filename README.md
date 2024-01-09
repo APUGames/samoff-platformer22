@@ -1,1 +1,3 @@
-# samoff-platformer22
+# Platformer Game
+
+By Tim Samoff
