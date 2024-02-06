@@ -14,14 +14,17 @@ public class Player : MonoBehaviour
 
     Animator playerAnimator;
 
-    Collider2D playerCollider;
+    CapsuleCollider2D playerBodyCollider;
+
+    BoxCollider2D playerFeetCollider;
 
     // Start is called before the first frame update
     void Start()
     {
         playerCharacter = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
-        playerCollider = GetComponent<Collider2D>();
+        playerBodyCollider = GetComponent<CapsuleCollider2D>();
+        playerFeetCollider = GetComponent<BoxCollider2D>();
 
         gravityScaleAtStart = playerCharacter.gravityScale;
     }
@@ -65,7 +68,7 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-        if(!playerCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if(!playerFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
             // Will stop this function unless true
             return;
@@ -76,17 +79,17 @@ public class Player : MonoBehaviour
             // Get new Y velocity based on a variable
             Vector2 jumpVelocity = new Vector2(0.0f, jumpSpeed);
             playerCharacter.velocity += jumpVelocity;
-            playerAnimator.SetBool("jump", true);
+            // playerAnimator.SetBool("jump", true);
         }
-        else
+        /* else
         {
             playerAnimator.SetBool("jump", false);
-        }
+        } */
     }
 
     private void Climb()
     {
-        if (!playerCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")))
+        if (!playerBodyCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")))
         {
             playerAnimator.SetBool("climb", false);
 
@@ -107,6 +110,5 @@ public class Player : MonoBehaviour
 
         bool vSpeed = Mathf.Abs(playerCharacter.velocity.y) > Mathf.Epsilon;
         playerAnimator.SetBool("climb", vSpeed);
-
     }
 }
