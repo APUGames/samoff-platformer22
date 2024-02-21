@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
     [SerializeField] private float climbSpeed = 5.0f;
     [SerializeField] Vector2 deathSeq = new Vector2(25f, 25f);
 
+    AudioSource audioSource;
+    [SerializeField] private AudioClip jumpSound;
+
     float gravityScaleAtStart;
 
     bool isAlive = true;
@@ -28,6 +31,8 @@ public class Player : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         playerBodyCollider = GetComponent<CapsuleCollider2D>();
         playerFeetCollider = GetComponent<BoxCollider2D>();
+
+        audioSource = GetComponent<AudioSource>();
 
         gravityScaleAtStart = playerCharacter.gravityScale;
     }
@@ -90,6 +95,8 @@ public class Player : MonoBehaviour
             Vector2 jumpVelocity = new Vector2(0.0f, jumpSpeed);
             playerCharacter.velocity += jumpVelocity;
             // playerAnimator.SetBool("jump", true);
+
+            audioSource.PlayOneShot(jumpSound, 0.7f);
         }
         /* else
         {
