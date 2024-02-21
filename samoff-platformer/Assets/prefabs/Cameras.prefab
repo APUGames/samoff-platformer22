@@ -61,7 +61,7 @@ Transform:
   m_GameObject: {fileID: 1660282145528343315}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.7480373, y: -1.8505399, z: -10}
+  m_LocalPosition: {x: -2.7599645, y: -1.8491399, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -171,6 +171,7 @@ GameObject:
   - component: {fileID: 7046596683257695897}
   - component: {fileID: 1970059232343345377}
   - component: {fileID: 3449776776420451152}
+  - component: {fileID: 8440625977338943504}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -248,6 +249,23 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
+--- !u!114 &8440625977338943504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3219042393028955706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0.5
+  m_FrequencyGain: 0.5
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &4244708704342461130
 GameObject:
   m_ObjectHideFlags: 0
