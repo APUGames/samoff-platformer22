@@ -50,8 +50,14 @@ TagManager:
   - name: Ground
     uniqueID: 795172735
     locked: 0
+  - name: Midground
+    uniqueID: 2477000963
+    locked: 0
   - name: Climbing
     uniqueID: 408500471
+    locked: 0
+  - name: Foreground Fixes
+    uniqueID: 4269534949
     locked: 0
   - name: Pickups
     uniqueID: 1234411563
@@ -64,6 +70,9 @@ TagManager:
     locked: 0
   - name: Hazards
     uniqueID: 74524881
+    locked: 0
+  - name: Stuff MG
+    uniqueID: 214633695
     locked: 0
   - name: Stuff FG
     uniqueID: 3798086249
